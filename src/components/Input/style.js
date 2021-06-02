@@ -50,11 +50,20 @@ export const ContainerInputs = styled.div`
     padding: 0 1.5rem;
     border: 1px solid black;
     border-radius: 10px;
+    -moz-appearance: textfield;
 
     &.wrong {
       border: 2px solid #ff0000b4;
     }
   }
+
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
 
   input:focus {
     border: 2px solid ${({theme}) => theme.corPrincipal};

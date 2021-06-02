@@ -1,4 +1,6 @@
 import { Input } from '../../components/Input';
+import { Select } from '../../components/Select';
+import { ConfirmacaoDados } from './ConfirmacaoDados';
 
 export const etapaQuantidade = (qtdTensiosRasos, setQtdTensiosRasos, statusInputRasos, qtdTensiosProfundos, setQtdTensiosProfundos, statusInputProfs ) => {
 
@@ -15,7 +17,22 @@ export const etapaQuantidade = (qtdTensiosRasos, setQtdTensiosRasos, statusInput
 export const etapaEspecificacoes = () => {
   return {
     textoh2: 'Especificações do solo',
-    campos: <p>ola mundo</p>,
+    campos: [
+      <Select key='select1' opcaoPadrao='Cultura' opcoes={['Alface', 'Batata', 'Tomate', 'Cebola']} helperText='Selecione' />,
+      <Select key='select2' opcaoPadrao='Tipo de solo' opcoes={['Arenoso', 'Argiloso', 'Calcário', 'Humoso']} helperText='Selecione' />,
+      <Select key='select3' opcaoPadrao='Tipo de irrigação' opcoes={['Aspersão', 'Sulco', 'Gotejamento']} helperText='Selecione' />
+    ],
     textoBtn: 'Próximo'
+  }
+}
+
+export const etapaConfirmacao = (dados, setEtapaAtual) => {
+
+  return {
+    textoh2: 'Confirmação dos dados',
+    campos: [
+      <ConfirmacaoDados key='confirmacaoDados' dados={dados} setEtapaAtual={setEtapaAtual}/>
+    ],
+    textoBtn: 'Confirmar'
   }
 }

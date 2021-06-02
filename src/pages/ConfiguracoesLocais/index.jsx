@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 
 import HeaderSessao from '../../components/HeaderSessao';
-import { etapaEspecificacoes, etapaQuantidade } from './conteudoFormulario';
+import { etapaConfirmacao, etapaEspecificacoes, etapaQuantidade } from './conteudoFormulario';
 import { validarInputsQntd, validarSelectsEspecificacoes } from '../../services/validacoes_ConfigLocais';
 import { StyledConfiguracoesLocais } from './style';
+import { Stepper } from './Stepper';
 
 const ConfiguracoesLocais = () => {
   const [etapaAtual, setEtapaAtual] = useState(0);
@@ -17,6 +18,7 @@ const ConfiguracoesLocais = () => {
   const listaDeEtapas = [
     etapaQuantidade(qtdTensiosRasos, setQtdTensiosRasos, statusInputRasos , qtdTensiosProf, setQtdTensiosProf, statusInputProfs),
     etapaEspecificacoes(),
+    etapaConfirmacao(dadosColetados, setEtapaAtual),
   ];
 
   function handlerSubmit(event){
@@ -28,19 +30,18 @@ const ConfiguracoesLocais = () => {
     let selectsValidos = validarSelectsEspecificacoes(selects);
 
     if(inputsValidos){
-
-      const valores = inputs.map(element => element.value);
+      let valores = inputs.map(element => element.value);
 
       setDadosColetados({ qtdTensiosRasos: valores[0], qtdTensiosProfundos: valores[1] });
-      setEtapaAtual(etapaAtual + 1);
-      console.log(dadosColetados);
+      setEtapaAtual(etapaAtual +1);
     }
     
     if(selectsValidos){
-      
-      console.log('ackda vakg[v');
-    }
+      let valores = selects.map(element => element.value);
 
+      setDadosColetados({...dadosColetados, cultura: valores[0], tipoSolo: valores[1], tipoIrrigacao: valores[2]});
+      setEtapaAtual(etapaAtual +1);
+    };
   }
 
   return (
@@ -48,7 +49,7 @@ const ConfiguracoesLocais = () => {
       <HeaderSessao titulo="Configurações Locais" helperLink="/help/1"/>
       
       <StyledConfiguracoesLocais>
-        <p>stepper</p>
+        <Stepper etapa={etapaAtual} />
 
         <h2> {listaDeEtapas[etapaAtual].textoh2} </h2>
         
