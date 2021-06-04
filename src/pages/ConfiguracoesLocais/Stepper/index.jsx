@@ -32,6 +32,10 @@ export const Stepper = ({ etapa }) => {
   if(etapa === 0) {
     checkedListAux[1] = '';
   }
+
+  if (etapa === 1) {
+    checkedListAux[1] = '';
+  }
   
   if (JSON.stringify(checkedList) !== JSON.stringify(checkedListAux)) {
     setCheckedList(checkedListAux);
