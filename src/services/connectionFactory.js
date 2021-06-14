@@ -1,5 +1,5 @@
 const dbName = "ecoagro";
-const stores = ["analises"];
+const stores = ["analises", "plantacoes"];
 const version = 1;
 
 export class ConnectionFactory {

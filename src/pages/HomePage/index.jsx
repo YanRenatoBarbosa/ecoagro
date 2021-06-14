@@ -8,11 +8,11 @@ import { StyleHomePage } from './style';
 
 function Home() {
   const [hiddenMenu, setHiddenMenu] = useState('invisible');
-  const [CardsList, setCardsList] = useState([]);
+  const [cardsList, setCardsList] = useState([]);
 
   useEffect(() => {
-    getCardsList();
-  }, []);
+    getCardsList(cardsList, setCardsList);
+  }, [cardsList]);
 
   return (
     <>

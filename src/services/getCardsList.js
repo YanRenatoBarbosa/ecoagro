@@ -1,3 +1,3 @@
-export function getCardsList() {
+export function getCardsList(cardsList, setCardsList) {
   
 }

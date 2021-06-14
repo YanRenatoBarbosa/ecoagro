@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Redirect } from 'react-router';
+import { Redirect, useParams } from 'react-router';
 
 import { Header } from '../../components/Header';
 import { ControllerFerramenta } from '../../controllers/ControllerFerramenta';
@@ -11,24 +11,26 @@ const Ferramenta = () => {
   const [dados, setDados] = useState({});
   const [redirect, setRedirect] = useState(false);
   const [btnStyle, setBtnStyle] = useState('invisible');
+  const { plantacao } = useParams();
 
   useEffect(() => {
-    let novosDados = window.localStorage.getItem('dados');
-    let dadosAtuais = JSON.stringify(dados);
-
-    let dadosNaoSaoNulos = novosDados !== null;
-    let dadosNovosSaoDiferentes = novosDados !== dadosAtuais;
-
-    if ( dadosNaoSaoNulos && dadosNovosSaoDiferentes ) {
-      setDados(JSON.parse(novosDados));
-      setBtnStyle('visible');
-
-    } else {
-      if(JSON.stringify(dados) === '{}'){
-        setRedirect(true);
+    Controller.getDados(plantacao).then(novosDados => {
+      let dadosAtuais = JSON.stringify(dados);
+  
+      let dadosNaoSaoNulos = novosDados !== null;
+      let dadosNovosSaoDiferentes = novosDados !== dadosAtuais;
+  
+      if ( dadosNaoSaoNulos && dadosNovosSaoDiferentes ) {
+        setDados(JSON.parse(novosDados));
+        setBtnStyle('visible');
+  
+      } else {
+        if(JSON.stringify(dados) === '{}'){
+          setRedirect(true);
+        }
       }
-    }
-  }, [dados]);
+    })
+  }, [dados, plantacao]);
    
   if(redirect){
     return <Redirect to="/configuracoes-locais" />
