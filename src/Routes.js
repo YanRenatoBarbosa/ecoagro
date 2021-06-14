@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
-import Home from './pages/Home';
+import HomePage from './pages/HomePage';
 import ConfiguracoesLocais from './pages/ConfiguracoesLocais';
 import Ferramenta from './pages/Ferramenta';
 import { GlobalStyle } from './styles/GlobalStyle';
@@ -16,7 +16,7 @@ const Routes = () => {
         <GlobalStyle />
 
         <Switch>
-          <Route exact path="/" component={() => <Home /> } />
+          <Route exact path="/" component={() => <HomePage /> } />
           <Route exact path="/configuracoes-locais" component={() => <ConfiguracoesLocais /> } />
           <Route exact path="/ferramenta" component={() => <Ferramenta />} />
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Redirect } from 'react-router';
 
-import HeaderSessao from '../../components/HeaderSessao';
+import { Header } from '../../components/Header';
 import { ControllerFerramenta } from '../../controllers/ControllerFerramenta';
 import { StyledFerramenta } from './style';
 
@@ -36,7 +36,7 @@ const Ferramenta = () => {
   
   return (
     <>
-      <HeaderSessao titulo='Ferramenta' helperLink='/help/1' />
+      <Header type="session" title='Ferramenta' helperLink='/help/1' />
       
       <StyledFerramenta>
         <h2> Insira os valores medidos pelos tensiômetros </h2>

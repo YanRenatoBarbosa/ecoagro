@@ -18,7 +18,7 @@ export const StyledConfiguracoesLocais = styled.main`
       height: 2.5rem;
       width: 9.75rem;
       font-size: 20px;
-      color: ${({theme}) => theme.corTextoInside};
+      color: ${({theme}) => theme.secundaryTextColor};
       border-radius: 12px;
       background: #066d48;
       margin-top: 8px;

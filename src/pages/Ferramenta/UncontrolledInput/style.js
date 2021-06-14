@@ -28,11 +28,11 @@ export const StyledContainerInput = styled.div`
         font-size: 1rem;
         top: -0.813rem;
         padding-right: 2px;
-        background: ${({theme}) => theme.corBgBody};
+        background: ${({theme}) => theme.bodyBg};
       }
 
       &.colorido {
-        color: ${({theme}) => theme.corPrincipal};
+        color: ${({theme}) => theme.mainColor};
       }
     }
 
@@ -46,7 +46,7 @@ export const StyledContainerInput = styled.div`
     }
 
     input:focus {
-      border: 2px solid ${({theme}) => theme.corPrincipal};
+      border: 2px solid ${({theme}) => theme.mainColor};
     }
   }
 
@@ -66,12 +66,12 @@ export const StyledContainerInput = styled.div`
       border: 1px solid black;
       font-size: 1rem;
 
-      color: ${({theme}) => theme.corTexto};
+      color: ${({theme}) => theme.textColor};
       background-color: transparent;
 
       &.selected {
-        color: ${({theme}) => theme.corTextoInside};
-        background-color: ${({theme}) => theme.corPrincipal};
+        color: ${({theme}) => theme.secundaryTextColor};
+        background-color: ${({theme}) => theme.mainColor};
       }
     }
   }

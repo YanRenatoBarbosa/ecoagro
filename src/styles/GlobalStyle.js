@@ -11,12 +11,12 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${({theme}) => theme.corBgBody};
+    background: ${({theme}) => theme.bodyBg};
     font-family: 'Poppins', sans-serif;
   }
 
   a, p {
-    color: ${({theme}) => theme.corTexto};
+    color: ${({theme}) => theme.textColor};
     text-decoration: none;
   }
 

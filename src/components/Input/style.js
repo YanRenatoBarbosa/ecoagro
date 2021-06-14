@@ -26,7 +26,7 @@ export const ContainerInputs = styled.div`
       top: -0.8rem;
       font-size: 1rem;
       color: #000000b4;
-      background: ${({theme}) => theme.corBgBody};
+      background: ${({theme}) => theme.bodyBg};
       padding-right: 2px;
     }
     
@@ -34,12 +34,12 @@ export const ContainerInputs = styled.div`
       top: -0.8rem;
       font-size: 1rem;
       color: red;
-      background: ${({theme}) => theme.corBgBody};
+      background: ${({theme}) => theme.bodyBg};
       padding-right: 2px;
     }
 
     &.colorido {
-      color: ${({theme}) => theme.corPrincipal};
+      color: ${({theme}) => theme.mainColor};
     }
   }
 
@@ -66,7 +66,7 @@ export const ContainerInputs = styled.div`
 
 
   input:focus {
-    border: 2px solid ${({theme}) => theme.corPrincipal};
+    border: 2px solid ${({theme}) => theme.mainColor};
   }
 
   span {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import HeaderSessao from '../../components/HeaderSessao';
+import { Header } from '../../components/Header';
 import { Stepper } from './Stepper';
 import { etapaConfirmacao, etapaEspecificacoes, etapaQuantidade } from './conteudoFormulario';
 import { validarInputsQntd, validarSelectsEspecificacoes } from '../../services/validacoes_ConfigLocais';
@@ -57,7 +57,7 @@ const ConfiguracoesLocais = () => {
 
   return (
     <>
-      <HeaderSessao titulo="Configurações Locais" helperLink="/help/2"/>
+      <Header type="session" title="Configurações Locais" helperLink="/help/2"/>
       
       <StyledConfiguracoesLocais>
         <Stepper etapa={etapaAtual} />
