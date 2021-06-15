@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Header } from '../../components/Header';
 import { getCardsList } from '../../services/getCardsList';
-import CardPlantacao from './CardPlantacao';
 import { LinkInfo } from './LinkInfo';
 import { StyleHomePage } from './style';
 
@@ -11,7 +10,13 @@ function Home() {
   const [cardsList, setCardsList] = useState([]);
 
   useEffect(() => {
-    getCardsList(cardsList, setCardsList);
+    getCardsList(cardsList, setCardsList).then(newCards => {
+      let cardsAtualizados = JSON.stringify(cardsList) === JSON.stringify(newCards);
+
+      if(!cardsAtualizados){
+        setCardsList(newCards);
+      }
+    });
   }, [cardsList]);
 
   return (
@@ -22,8 +27,7 @@ function Home() {
         <h2>Escolha uma plantação</h2>
 
         <section className="container-plantacoes">
-          <CardPlantacao i="1" infos="Alface - Gotejamento" />
-          <CardPlantacao i="2" infos="Batata - Sulco" />
+            {cardsList}
 
             <Link to="/configuracoes-locais">
               <div className="btnAddPlantacoes">

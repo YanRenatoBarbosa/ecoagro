@@ -1,9 +1,9 @@
 import React from "react";
 import { StyleCardPlantacao } from "./style";
 
-const CardPlantacao = ({ i, infos }) => (
+const CardPlantacao = ({ i, infos, id }) => (
   <StyleCardPlantacao>
-    <button className="plantacao">
+    <button className="plantacao" onClick={() => window.location.pathname = `/ferramenta/${id}`}>
       <span className="material-icons">spa</span>
 
       <div className="infos">
