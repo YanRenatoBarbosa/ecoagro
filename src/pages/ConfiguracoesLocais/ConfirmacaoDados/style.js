@@ -31,6 +31,7 @@ export const StyledConfirmacaoDados = styled.section`
   .btn-editarDados {
     height: auto;
     width: auto;
+    color: black;
     background: none;
     margin-top: 0; 
   }

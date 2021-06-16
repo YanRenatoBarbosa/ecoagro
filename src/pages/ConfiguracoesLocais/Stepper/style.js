@@ -32,9 +32,9 @@ export const StyledStepper = styled.div`
       }
     }
 
-    img {
+    span {
       display: none;
-      height: 1.25rem;
+      color: white;
 
       &.checked {
         display: inline-block;
