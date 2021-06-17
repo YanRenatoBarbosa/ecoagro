@@ -91,12 +91,19 @@ export class ControllerFerramenta {
     };
 
     ConnectionFactory.getConnection().then((connection) => {
-      connection
+      let request = connection
         .transaction(["analises"], "readwrite")
         .objectStore("analises")
         .add(resultado);
 
-      window.location.pathname = "/resultados";
+        request.onsuccess = event => {
+          window.location.pathname = `/resultados/${event.target.result}`;
+        }
+
+        request.onerror = event => {
+          alert('Algo deu errado, tente novamente!');
+          console.log('A requisição de adição de dados ao indexedDB retornou um erro!');
+        }
     });
   }
 

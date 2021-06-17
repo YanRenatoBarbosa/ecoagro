@@ -1,7 +1,8 @@
 import React from "react";
+import { deletarPlatacao } from "../../../services/deletarPlantacoes";
 import { StyleCardPlantacao } from "./style";
 
-const CardPlantacao = ({ i, infos, id }) => (
+const CardPlantacao = ({ i, infos, id, deleteCardsListCB }) => (
   <StyleCardPlantacao>
     <button className="plantacao" onClick={() => window.location.pathname = `/ferramenta/${id}`}>
       <span className="material-icons">spa</span>
@@ -12,7 +13,11 @@ const CardPlantacao = ({ i, infos, id }) => (
       </div>
     </button>
 
-    <button className="btnRemove">
+    <button className="btnRemove" onClick={() => {
+      deletarPlatacao(id).then(() => {
+        deleteCardsListCB();
+      })
+    }}>
       <span className="material-icons">delete</span>
     </button>
   </StyleCardPlantacao>

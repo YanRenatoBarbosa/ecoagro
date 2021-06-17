@@ -24,6 +24,7 @@ export function getCardsList(cardsList, setCardsList) {
                 i={i + 1} 
                 infos={`${plantacaoInfo.cultura} - ${plantacaoInfo.tipoIrrigacao}`}
                 id={id}
+                deleteCardsListCB={() => setCardsList(cardsList)}
               />
             );
             resolve(cards)
