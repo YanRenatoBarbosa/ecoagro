@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import { ConnectionContext } from "../../context/Connection";
 import { AnalisesDao } from "../../dao/AnalisesDao";
@@ -48,12 +48,12 @@ export function Resultados(){
             <div>
               <h2>Resultado Geral</h2>
               <section className="CardResults">
-                <div>
-                  <p>{(resultado.mediaGeral).toFixed(2)} Cbar</p>
-                  <p>Potêncial Mátrico Médio</p>
+                <div className="CardResults-top">
+                  <p className="media">{(resultado.mediaGeral).toFixed(2)} Cbar</p>
+                  <p className="legenda">Potêncial Mátrico Médio</p>
                 </div>
 
-                <div> {analise.card.text} </div>
+                <div className={analise.card.status}> {analise.card.text} </div>
               </section>
             </div>
           )
@@ -64,6 +64,15 @@ export function Resultados(){
             <div>
               <h2>Recomendação de irrigação</h2>
               <p className="recomendationText">{analise.text}</p>
+            </div>
+          )
+        }
+
+        {
+          JSON.stringify(analise) !== '{}' && (
+            <div className="btns">
+              <Link to="/mais-detalhes" > Mais detalhes </Link>
+              <Link to="/outras-analises" > Outras análises </Link>
             </div>
           )
         }
