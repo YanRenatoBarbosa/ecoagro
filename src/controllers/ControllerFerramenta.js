@@ -81,7 +81,22 @@ export class ControllerFerramenta {
     );
     contadorMediaProfs /= inputsTensiosProfs.length;
 
+    let leituras = { rasos: [], profundos: [] };
+
+    if (inputsTensiosRasos) {
+      inputsTensiosRasos.forEach( element => {
+        leituras.rasos.push(element.value);
+      })
+    }
+
+    if (inputsTensiosProfs) {
+      inputsTensiosProfs.forEach( element => {
+        leituras.profundos.push(element.value);
+      })
+    }
+
     const resultado = {
+      leituras,
       mediaGeral: contadorMediaGeral,
       mediaRasos: contadorMediaRasos,
       mediaProfs: contadorMediaProfs,

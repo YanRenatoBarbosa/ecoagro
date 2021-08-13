@@ -41,4 +41,32 @@ export const StyleCardPlantacao = styled.div`
     font-size: 1.85rem;
     opacity: 85%;
   }
+
+  @media screen and (min-width: 425px) {
+    max-width: 23rem;
+  }
+
+  @media screen and (min-width: 800px) {
+    width: fit-content;
+    height: fit-content;
+    padding: .9rem .75rem .9rem 0 ;
+
+    .plantacao:hover, .btnRemove span:hover {
+      cursor: pointer;
+    }
+    
+    .btnRemove span {
+      opacity: 0%;
+      margin-left: 0.5rem;
+    }
+    
+    :hover {
+      .btnRemove span {
+        opacity: 100%;
+      }
+    }
+
+
+
+  }
 `;

@@ -71,7 +71,7 @@ export function Resultados(){
         {
           JSON.stringify(analise) !== '{}' && (
             <div className="btns">
-              <Link to="/mais-detalhes" > Mais detalhes </Link>
+              <Link to={`/mais-detalhes/${idResultado}`} > Mais detalhes </Link>
               <Link to="/outras-analises" > Outras análises </Link>
             </div>
           )

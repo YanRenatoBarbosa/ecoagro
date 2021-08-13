@@ -7,7 +7,7 @@ const CardPlantacao = ({ i, infos, id, deleteCardsListCB }) => {
   const history = useHistory();
 
   return (
-    <StyleCardPlantacao>
+    <StyleCardPlantacao className="card-plantacao">
       <button className="plantacao" onClick={() => history.push(`/ferramenta/${id}`)}>
         <span className="material-icons">spa</span>
 

@@ -30,7 +30,7 @@ export const Header = ({ type = "default", ...rest }) => {
   // needs the props visiblity and setVisiblity
   return (
     <HeaderMain>
-      <button onClick={() => rest.setVisiblity("visible")}>
+      <button className="menu" onClick={() => rest.setVisiblity("visible")}>
         <span className="material-icons">menu</span>
       </button>
 
@@ -39,6 +39,12 @@ export const Header = ({ type = "default", ...rest }) => {
           <button onClick={() => rest.setVisiblity("invisible")}>Fechar</button>
         </div>
       </section>
+
+      <div className="desktopOptions">
+        <Link to="/asd">Exemplo</Link>
+        <Link to="/asd">Como funciona</Link>
+        <Link to="/asd">Ajuda</Link>
+      </div>
 
       <Link to="/">
         <h1>Ecoagro</h1>

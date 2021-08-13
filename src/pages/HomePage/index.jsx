@@ -8,6 +8,7 @@ import { StyleHomePage } from './style';
 function Home() {
   const [hiddenMenu, setHiddenMenu] = useState('invisible');
   const [cardsList, setCardsList] = useState([]);
+  const [cardsAmount, setCardsAmount] = useState('none');
 
   useEffect(() => {
     getCardsList(cardsList, setCardsList).then(newCards => {
@@ -15,6 +16,14 @@ function Home() {
 
       if(!cardsAtualizados){
         setCardsList(newCards);
+
+        if(newCards.length === 1){
+          setCardsAmount('oneChild')
+        } else if(newCards.length === 2){
+          setCardsAmount('dobleChild')
+        } else if(newCards.length >= 3){
+          setCardsAmount('manyChilds')
+        }
       }
     });
   }, [cardsList]);
@@ -27,7 +36,9 @@ function Home() {
         <h2>Escolha uma plantação</h2>
 
         <section className="container-plantacoes">
-            {cardsList}
+            <div className={`cards-list ${cardsAmount}`}>
+              {cardsList}
+            </div>
 
             <Link to="/configuracoes-locais">
               <div className="btnAddPlantacoes">

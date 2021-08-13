@@ -9,7 +9,7 @@ export const HeaderMain = styled.header`
   background: ${({ theme }) => theme.headerBg};
   position: relative;
 
-  button {
+  .menu {
     height: 2.5rem;
     position: absolute;
     left: 5%;
@@ -17,6 +17,10 @@ export const HeaderMain = styled.header`
     span {
       font-size: 2.5rem;
     }
+  }
+
+  .desktopOptions {
+    display: none;
   }
 
   section {
@@ -44,6 +48,25 @@ export const HeaderMain = styled.header`
   h1 {
     font-size: 2rem;
     color: ${({ theme }) => theme.mainColor};
+  }
+
+  @media screen and (min-width: 800px) {
+    padding: 0 10%;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+
+    .menu {
+      position: unset;
+    }
+
+    .desktopOptions {
+      display: initial;
+      width: 40%;
+
+      a {
+        margin-right: 1rem;
+      }
+    }
   }
 `;
 
