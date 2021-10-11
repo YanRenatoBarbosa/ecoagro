@@ -22,7 +22,7 @@ export function getCardsList(cardsList, setCardsList) {
               <CardPlantacao 
                 key={`CardPlantacao-${i + 1}`} 
                 i={i + 1} 
-                infos={`${plantacaoInfo.cultura} - ${plantacaoInfo.tipoIrrigacao}`}
+                infos={[`${plantacaoInfo.cultura}`,`${plantacaoInfo.tipoIrrigacao}`]}
                 id={id}
                 deleteCardsListCB={() => setCardsList(cardsList)}
               />

@@ -48,25 +48,10 @@ export const StyleHomePage = styled.main`
       .cards-list {
         display: flex;
         flex-wrap: wrap;
+        justify-content: left;
 
-        &.none {
-          
-        }
-        
-        &.oneChild {
-          justify-content: left;
-        }
-
-        &.dobleChild {
-          justify-content: center;
-
-          .card-plantacao {
-            margin-right: 1rem;
-          }
-        }
-
-        &.manyChilds {
-          justify-content: space-around;
+        &.nonePlantationsInStorage {
+          // mensagem avisando para adicionar plantações
         }
       }
     }

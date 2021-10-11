@@ -5,15 +5,30 @@ import { StyleCardPlantacao } from "./style";
 
 const CardPlantacao = ({ i, infos, id, deleteCardsListCB }) => {
   const history = useHistory();
+  
+  let responsiveInfos;
+  if(window.innerWidth < 800) {
+    responsiveInfos = infos.join(' - ')
+  } else {
+    responsiveInfos = infos.join(' ')
+  }
+  
+  let responsiveTitle = () => {
+    if(window.innerWidth > 800) {
+      return 'Plant.'
+    } 
+    
+    return 'Plantação'
+  } 
 
   return (
     <StyleCardPlantacao className="card-plantacao">
       <button className="plantacao" onClick={() => history.push(`/ferramenta/${id}`)}>
-        <span className="material-icons">spa</span>
+        <span className="material-icons iconeFolha">spa</span>
 
         <div className="infos">
-          <h3>Plantação {i}</h3>
-          <p>{infos}</p>
+          <h3>{responsiveTitle()} {i}</h3>
+          <p>{responsiveInfos}</p>
         </div>
       </button>
 
