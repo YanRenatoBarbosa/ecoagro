@@ -8,6 +8,7 @@ import ConfiguracoesLocais from './pages/ConfiguracoesLocais';
 import Ferramenta from './pages/Ferramenta';
 import { Resultados } from './pages/Resultados';
 import MaisDetalhes from './pages/MaisDetalhes';
+import ListaAnalises from './pages/listaAnalises';
 import { temaLight } from './styles/themes/light';
 import { GlobalStyle } from './styles/GlobalStyle';
 
@@ -23,6 +24,7 @@ const Routes = () => {
             <Route exact path="/configuracoes-locais" component={ConfiguracoesLocais} />
             <Route exact path="/ferramenta/:plantacao" component={Ferramenta} />
             <Route exact path="/resultados/:idResultado" component={Resultados} />
+            <Route exact path="/lista/resultados" component={ListaAnalises} />
             <Route exact path="/mais-detalhes/:idResultado" component={MaisDetalhes} />
 
             <Route component={() => <p>página 404</p>} />

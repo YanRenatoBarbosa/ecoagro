@@ -24,4 +24,12 @@ export const StyledConfiguracoesLocais = styled.main`
       margin-top: 8px;
     }
   }
+
+  @media screen and (min-width: 800px) {
+    padding: 1.75rem 20% 0;
+
+    form {
+      width: 50%;
+    }
+  }
 `;

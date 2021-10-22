@@ -25,4 +25,15 @@ export const StyledFerramenta = styled.main`
       }
     }
   }
+
+  @media screen and (min-width: 800px) {
+    padding: 1.75rem 20% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    form {
+      width: 50%;
+    }
+  }
 `;
